@@ -45,11 +45,11 @@ Node.prototype.search = function(data) {
 
 -------------------------------------------------------------------------------------------------------------------------
 
-function Tree() {
+function BinaryTree() {
     this.root = null
 }
 
-Tree.prototype.insert = function(data) {
+BinaryTree.prototype.insert = function(data) {
     var node = new Node(data)
     if(this.root === null) {
         this.root = node
@@ -58,11 +58,22 @@ Tree.prototype.insert = function(data) {
     }
 }
 
-Tree.prototype.traverse = function() {
+BinaryTree.prototype.traverse = function() {
     this.root.visit()
 }
 
-Tree.prototype.search = function(data) {
+BinaryTree.prototype.search = function(data) {
     var node = this.root.search(data)
     return node
 }
+
+
+var bt = new BinaryTree()
+
+var nodes = [3,5,6,7]
+
+nodes.forEach(node => bt.addValue(node))
+
+console.log(bt, bt.traverse())
+console.log(bt.search(5))
+
