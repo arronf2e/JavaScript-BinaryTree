@@ -33,9 +33,9 @@ class Node {
         if(this.data == data) {
             console.log(`${data} found!`)
             return this
-        }else if(data < this.data && this.left != null) {
+        }else if(data < this.data && this.left !== null) {
             return this.left.search(data)
-        }else if(data > this.data && this.right != null){
+        }else if(data > this.data && this.right !== null){
             return this.right.search(data)
         }
         return null
